@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HIPAA Compliant Next.js + Lambda
 
-## Getting Started
+Simple Hello World example with AWS Lambda backend.
 
-First, run the development server:
+## Setup
 
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Deploy Lambda to AWS:
+```bash
+serverless deploy
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Copy the API Gateway URL from deployment output and add to `.env.local`:
+```
+NEXT_PUBLIC_API_GATEWAY_URL=https://your-api-id.execute-api.us-east-1.amazonaws.com
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run Next.js locally:
+```bash
+npm run dev
+```
 
-## Learn More
+5. Open http://localhost:3000 and click the button!
 
-To learn more about Next.js, take a look at the following resources:
+## Deploying to AWS Amplify
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. In Amplify Console → Environment variables, add:
+   - Variable: `NEXT_PUBLIC_API_GATEWAY_URL`
+   - Value: `https://your-api-id.execute-api.us-east-1.amazonaws.com`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Create `amplify.yml` in project root (see below)
 
-## Deploy on Vercel
+3. Redeploy the app
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── globals.css
+│   └── lib/
+│       └── api-client.ts
+├── lambda/
+│   └── hello.ts
+├── serverless.yml
+└── amplify.yml
+```

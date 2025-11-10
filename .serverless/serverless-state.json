@@ -122,7 +122,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-d090d6c2-e418",
-                "S3Key": "serverless/hipaa-hello-world/dev/1762743058041-2025-11-10T02:50:58.041Z/hipaa-hello-world.zip"
+                "S3Key": "serverless/hipaa-hello-world/dev/1762744068116-2025-11-10T03:07:48.116Z/hipaa-hello-world.zip"
               },
               "Handler": "lambda/hello.handler",
               "Runtime": "nodejs20.x",
@@ -146,14 +146,14 @@
               "HelloLogGroup"
             ]
           },
-          "HelloLambdaVersion7IR45JvzBlqfNGqsDQ8CR1KFMd5OX7zMPkxcvsgTM": {
+          "HelloLambdaVersionGImPUrfpQJhyFGi4GkMvn6bKPbAqY3VTGYYucQGjz8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HelloLambdaFunction"
               },
-              "CodeSha256": "ybXVIrSYVPPihBGQAHTJPYwqmjwOQMO+wgsPg5uJfgI="
+              "CodeSha256": "7ejF1ACdF4kWa5kWI2lCMYXRjy/eV4CMiwTqUSJAVrE="
             }
           },
           "HttpApi": {
@@ -273,7 +273,7 @@
           "HelloLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HelloLambdaVersion7IR45JvzBlqfNGqsDQ8CR1KFMd5OX7zMPkxcvsgTM"
+              "Ref": "HelloLambdaVersionGImPUrfpQJhyFGi4GkMvn6bKPbAqY3VTGYYucQGjz8"
             },
             "Export": {
               "Name": "sls-hipaa-hello-world-dev-HelloLambdaFunctionQualifiedArn"
@@ -340,7 +340,7 @@
         "timeout": 6,
         "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "HelloLambdaVersion7IR45JvzBlqfNGqsDQ8CR1KFMd5OX7zMPkxcvsgTM"
+        "versionLogicalId": "HelloLambdaVersionGImPUrfpQJhyFGi4GkMvn6bKPbAqY3VTGYYucQGjz8"
       }
     },
     "configValidationMode": "warn",
@@ -375,7 +375,7 @@
     "layers": {}
   },
   "package": {
-    "artifactDirectoryName": "serverless/hipaa-hello-world/dev/1762743058041-2025-11-10T02:50:58.041Z",
+    "artifactDirectoryName": "serverless/hipaa-hello-world/dev/1762744068116-2025-11-10T03:07:48.116Z",
     "artifact": "hipaa-hello-world.zip"
   }
 }
