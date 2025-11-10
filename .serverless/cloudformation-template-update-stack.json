@@ -91,7 +91,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-d090d6c2-e418",
-          "S3Key": "serverless/hipaa-hello-world/dev/1762728573868-2025-11-09T22:49:33.868Z/hipaa-hello-world.zip"
+          "S3Key": "serverless/hipaa-hello-world/dev/1762743058041-2025-11-10T02:50:58.041Z/hipaa-hello-world.zip"
         },
         "Handler": "lambda/hello.handler",
         "Runtime": "nodejs20.x",
@@ -115,21 +115,35 @@
         "HelloLogGroup"
       ]
     },
-    "HelloLambdaVersion8KgNCW4loRMPMEwK1kN2B5JKzxylO88AQH8myMgOs": {
+    "HelloLambdaVersion7IR45JvzBlqfNGqsDQ8CR1KFMd5OX7zMPkxcvsgTM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "HelloLambdaFunction"
         },
-        "CodeSha256": "oUsZy3BKeqldzXoQujziDO9xMDgXVxzdlMLICh8IJwM="
+        "CodeSha256": "ybXVIrSYVPPihBGQAHTJPYwqmjwOQMO+wgsPg5uJfgI="
       }
     },
     "HttpApi": {
       "Type": "AWS::ApiGatewayV2::Api",
       "Properties": {
         "Name": "dev-hipaa-hello-world",
-        "ProtocolType": "HTTP"
+        "ProtocolType": "HTTP",
+        "CorsConfiguration": {
+          "AllowHeaders": [
+            "Content-Type",
+            "Authorization"
+          ],
+          "AllowMethods": [
+            "GET",
+            "POST",
+            "OPTIONS"
+          ],
+          "AllowOrigins": [
+            "*"
+          ]
+        }
       }
     },
     "HttpApiStage": {
@@ -231,7 +245,7 @@
     "HelloLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "HelloLambdaVersion8KgNCW4loRMPMEwK1kN2B5JKzxylO88AQH8myMgOs"
+        "Ref": "HelloLambdaVersion7IR45JvzBlqfNGqsDQ8CR1KFMd5OX7zMPkxcvsgTM"
       },
       "Export": {
         "Name": "sls-hipaa-hello-world-dev-HelloLambdaFunctionQualifiedArn"

@@ -8,6 +8,17 @@ provider:
   stage: ${opt:stage, 'dev'}
   environment:
     ENVIRONMENT: ${self:provider.stage}
+  httpApi:
+    cors:
+      allowedOrigins:
+        - '*'
+      allowedHeaders:
+        - Content-Type
+        - Authorization
+      allowedMethods:
+        - GET
+        - POST
+        - OPTIONS
 
 build:
   esbuild:
