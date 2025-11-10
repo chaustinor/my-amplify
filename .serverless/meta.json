@@ -1,0 +1,107 @@
+{
+  "/Users/home/projects/nextjs-lambda-ts/serverless.yml": {
+    "versionFramework": "4.23.0",
+    "servicePath": "/Users/home/projects/nextjs-lambda-ts/serverless.yml",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "hipaa-hello-world",
+      "frameworkVersion": "4",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs20.x",
+        "region": "us-east-1",
+        "stage": "dev",
+        "environment": {
+          "ENVIRONMENT": "dev"
+        },
+        "versionFunctions": true
+      },
+      "build": {
+        "esbuild": {
+          "bundle": true,
+          "minify": true,
+          "sourcemap": true,
+          "exclude": [
+            "@aws-sdk/*"
+          ],
+          "target": "node20",
+          "platform": "node"
+        }
+      },
+      "functions": {
+        "hello": {
+          "handler": "lambda/hello.handler",
+          "events": [
+            {
+              "httpApi": {
+                "path": "/hello",
+                "method": "get"
+              },
+              "resolvedMethod": "GET",
+              "resolvedPath": "/hello"
+            }
+          ],
+          "name": "hipaa-hello-world-dev-hello"
+        }
+      }
+    },
+    "provider": {
+      "name": "aws",
+      "runtime": "nodejs20.x",
+      "region": "us-east-1",
+      "stage": "dev",
+      "environment": {
+        "ENVIRONMENT": "dev"
+      },
+      "versionFunctions": true
+    },
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "serviceRawFile": "service: hipaa-hello-world\nframeworkVersion: '4'\n\nprovider:\n  name: aws\n  runtime: nodejs20.x\n  region: us-east-1\n  stage: ${opt:stage, 'dev'}\n  environment:\n    ENVIRONMENT: ${self:provider.stage}\n\nbuild:\n  esbuild:\n    bundle: true\n    minify: true\n    sourcemap: true\n    exclude: ['@aws-sdk/*']\n    target: node20\n    platform: node\n\nfunctions:\n  hello:\n    handler: lambda/hello.handler\n    events:\n      - httpApi:\n          path: /hello\n          method: get",
+    "command": [
+      "info"
+    ],
+    "options": {},
+    "orgId": "8ff491ff-8e3d-41a8-b701-69df6a5ab3b6",
+    "orgName": "optdesign",
+    "userId": null,
+    "serviceProviderAwsAccountId": "851725567298",
+    "serviceProviderAwsCfStackName": "hipaa-hello-world-dev",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:851725567298:stack/hipaa-hello-world-dev/cefbf1b0-bdba-11f0-81bc-127c2d63601d",
+    "serviceProviderAwsCfStackCreated": "2025-11-09T22:24:08.411Z",
+    "serviceProviderAwsCfStackUpdated": "2025-11-09T22:49:37.289Z",
+    "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
+    "serviceProviderAwsCfStackOutputs": [
+      {
+        "OutputKey": "HelloLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:851725567298:function:hipaa-hello-world-dev-hello:2",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-hipaa-hello-world-dev-HelloLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "HttpApiId",
+        "OutputValue": "p8nm5n8trb",
+        "Description": "Id of the HTTP API",
+        "ExportName": "sls-hipaa-hello-world-dev-HttpApiId"
+      },
+      {
+        "OutputKey": "ServerlessDeploymentBucketName",
+        "OutputValue": "serverless-framework-deployments-us-east-1-d090d6c2-e418",
+        "ExportName": "sls-hipaa-hello-world-dev-ServerlessDeploymentBucketName"
+      },
+      {
+        "OutputKey": "HttpApiUrl",
+        "OutputValue": "https://p8nm5n8trb.execute-api.us-east-1.amazonaws.com",
+        "Description": "URL of the HTTP API",
+        "ExportName": "sls-hipaa-hello-world-dev-HttpApiUrl"
+      }
+    ]
+  }
+}

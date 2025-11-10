@@ -1,0 +1,27 @@
+service: hipaa-hello-world
+frameworkVersion: '4'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+  stage: ${opt:stage, 'dev'}
+  environment:
+    ENVIRONMENT: ${self:provider.stage}
+
+build:
+  esbuild:
+    bundle: true
+    minify: true
+    sourcemap: true
+    exclude: ['@aws-sdk/*']
+    target: node20
+    platform: node
+
+functions:
+  hello:
+    handler: lambda/hello.handler
+    events:
+      - httpApi:
+          path: /hello
+          method: get
