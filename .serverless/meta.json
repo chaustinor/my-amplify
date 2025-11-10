@@ -124,7 +124,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-d090d6c2-e418",
-                  "S3Key": "serverless/hipaa-hello-world/dev/1762744068116-2025-11-10T03:07:48.116Z/hipaa-hello-world.zip"
+                  "S3Key": "serverless/hipaa-hello-world/dev/1762744860234-2025-11-10T03:21:00.234Z/hipaa-hello-world.zip"
                 },
                 "Handler": "lambda/hello.handler",
                 "Runtime": "nodejs20.x",
@@ -148,14 +148,14 @@
                 "HelloLogGroup"
               ]
             },
-            "HelloLambdaVersionGImPUrfpQJhyFGi4GkMvn6bKPbAqY3VTGYYucQGjz8": {
+            "HelloLambdaVersionLcRpIqkWzA6nlE2pmXJC4GwtN7MUSo1gFeJfrhMqcg": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "HelloLambdaFunction"
                 },
-                "CodeSha256": "7ejF1ACdF4kWa5kWI2lCMYXRjy/eV4CMiwTqUSJAVrE="
+                "CodeSha256": "J3liG1AbXQat5gf9A74lCLZIojYrUKjXzlReZ1Z1TH8="
               }
             },
             "HttpApi": {
@@ -279,7 +279,7 @@
             "HelloLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "HelloLambdaVersionGImPUrfpQJhyFGi4GkMvn6bKPbAqY3VTGYYucQGjz8"
+                "Ref": "HelloLambdaVersionLcRpIqkWzA6nlE2pmXJC4GwtN7MUSo1gFeJfrhMqcg"
               },
               "Export": {
                 "Name": "sls-hipaa-hello-world-dev-HelloLambdaFunctionQualifiedArn"
@@ -357,7 +357,7 @@
           "timeout": 6,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "HelloLambdaVersionGImPUrfpQJhyFGi4GkMvn6bKPbAqY3VTGYYucQGjz8"
+          "versionLogicalId": "HelloLambdaVersionLcRpIqkWzA6nlE2pmXJC4GwtN7MUSo1gFeJfrhMqcg"
         }
       }
     },
@@ -479,7 +479,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-d090d6c2-e418",
-                "S3Key": "serverless/hipaa-hello-world/dev/1762744068116-2025-11-10T03:07:48.116Z/hipaa-hello-world.zip"
+                "S3Key": "serverless/hipaa-hello-world/dev/1762744860234-2025-11-10T03:21:00.234Z/hipaa-hello-world.zip"
               },
               "Handler": "lambda/hello.handler",
               "Runtime": "nodejs20.x",
@@ -503,14 +503,14 @@
               "HelloLogGroup"
             ]
           },
-          "HelloLambdaVersionGImPUrfpQJhyFGi4GkMvn6bKPbAqY3VTGYYucQGjz8": {
+          "HelloLambdaVersionLcRpIqkWzA6nlE2pmXJC4GwtN7MUSo1gFeJfrhMqcg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HelloLambdaFunction"
               },
-              "CodeSha256": "7ejF1ACdF4kWa5kWI2lCMYXRjy/eV4CMiwTqUSJAVrE="
+              "CodeSha256": "J3liG1AbXQat5gf9A74lCLZIojYrUKjXzlReZ1Z1TH8="
             }
           },
           "HttpApi": {
@@ -634,7 +634,7 @@
           "HelloLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HelloLambdaVersionGImPUrfpQJhyFGi4GkMvn6bKPbAqY3VTGYYucQGjz8"
+              "Ref": "HelloLambdaVersionLcRpIqkWzA6nlE2pmXJC4GwtN7MUSo1gFeJfrhMqcg"
             },
             "Export": {
               "Name": "sls-hipaa-hello-world-dev-HelloLambdaFunctionQualifiedArn"
@@ -699,12 +699,12 @@
     "serviceProviderAwsCfStackName": "hipaa-hello-world-dev",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:851725567298:stack/hipaa-hello-world-dev/cefbf1b0-bdba-11f0-81bc-127c2d63601d",
     "serviceProviderAwsCfStackCreated": "2025-11-09T22:24:08.411Z",
-    "serviceProviderAwsCfStackUpdated": "2025-11-10T02:55:28.917Z",
+    "serviceProviderAwsCfStackUpdated": "2025-11-10T03:07:51.157Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "HelloLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:851725567298:function:hipaa-hello-world-dev-hello:4",
+        "OutputValue": "arn:aws:lambda:us-east-1:851725567298:function:hipaa-hello-world-dev-hello:5",
         "Description": "Current Lambda function version",
         "ExportName": "sls-hipaa-hello-world-dev-HelloLambdaFunctionQualifiedArn"
       },
@@ -819,7 +819,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-us-east-1-d090d6c2-e418",
-              "S3Key": "serverless/hipaa-hello-world/dev/1762744068116-2025-11-10T03:07:48.116Z/hipaa-hello-world.zip"
+              "S3Key": "serverless/hipaa-hello-world/dev/1762744860234-2025-11-10T03:21:00.234Z/hipaa-hello-world.zip"
             },
             "Handler": "lambda/hello.handler",
             "Runtime": "nodejs20.x",
@@ -843,14 +843,14 @@
             "HelloLogGroup"
           ]
         },
-        "HelloLambdaVersionGImPUrfpQJhyFGi4GkMvn6bKPbAqY3VTGYYucQGjz8": {
+        "HelloLambdaVersionLcRpIqkWzA6nlE2pmXJC4GwtN7MUSo1gFeJfrhMqcg": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "HelloLambdaFunction"
             },
-            "CodeSha256": "7ejF1ACdF4kWa5kWI2lCMYXRjy/eV4CMiwTqUSJAVrE="
+            "CodeSha256": "J3liG1AbXQat5gf9A74lCLZIojYrUKjXzlReZ1Z1TH8="
           }
         },
         "HttpApi": {
@@ -973,7 +973,7 @@
         "HelloLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "HelloLambdaVersionGImPUrfpQJhyFGi4GkMvn6bKPbAqY3VTGYYucQGjz8"
+            "Ref": "HelloLambdaVersionLcRpIqkWzA6nlE2pmXJC4GwtN7MUSo1gFeJfrhMqcg"
           },
           "Export": {
             "Name": "sls-hipaa-hello-world-dev-HelloLambdaFunctionQualifiedArn"
